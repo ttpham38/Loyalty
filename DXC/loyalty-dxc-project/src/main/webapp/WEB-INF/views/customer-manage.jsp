@@ -265,7 +265,6 @@
 									<button type="button" class="close" data-dismiss="modal"
 										aria-hidden="true">&times;</button>
 								</div>
-
 								<div class="modal-body">
 									<div class="form-group">
 										<label>ID</label> <input type="text" class="form-control>
@@ -359,7 +358,8 @@
 								<div id="editCustomerModal" class="modal fade">
 										<div class="modal-dialog">
 											<div class="modal-content">
-												<form action="/customer/update" method="post">
+												<form action="/customer/update" method="post" 
+												enctype="multipart/form-data"></form>>
 													<div class="modal-header">
 														<h4 class="modal-title">Edit Customer</h4>
 														<button type="button" class="close" data-dismiss="modal"

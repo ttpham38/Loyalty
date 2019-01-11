@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.dxc.entity.Account;
 import com.dxc.repository.AccountRepository;
 
+
 @Controller
 public class AccountController {
 	@Autowired
@@ -49,8 +50,10 @@ public class AccountController {
 	}
 	//FUNCTION EDIT
 	//@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
-	//public String update(@Valid Account account) throws IOException {
-		//accountRepository.updateAccount( account.getAccountid(),account.getName(),account.getAddress(), account.getPassword(),account.getEmail(),account.getPoint(), account.getUsername(), account.getPassword(), account.getCheckadmin());		
-		//return "redirect:/customer";
+	//public void update(@Valid Account account) throws IOException{
+		//accountRepository.updateAccount(account.getAccountid(), account.getName(), account.getAddress(),
+				//account.getEmail(), account.getCellphone(), account.getPoint(), 
+				//account.getUsername(), account.getPassword(), account.getCheckadmin());
 	}
+
 

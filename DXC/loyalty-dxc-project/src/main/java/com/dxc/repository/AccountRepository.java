@@ -18,6 +18,14 @@ public interface AccountRepository extends CrudRepository<Account, Long> {
  Account findByAccountid(int id);
  //@Modifying(clearAutomatically = true)
  //@Transactional
- //@Query("update Account account set account.name =:isAccountName,account.address=:isAddress,accouns.email=:isEmail,account.cellphone=:isCellphone,account.point=:isPoint,account.username=:isUsername,account.password=:isPassword,account.checkadmin=:isCheckadmin where accout.accountid =:isAccountID")
-//public  void updateAccount(@Param("isAccountid") int isAccountID,  @Param("isAccountName") String isAccountName , @Param("isAddress") String isAddress, @Param("isEmail")String isEmail,@Param("isCellPhone")String isCellphone,@Param("isPoint") int isPoint,@Param("isUsername")String isUsername,@Param("isPassword")String isPassword,@Param("isCheackadmin")byte Checkadmin);
+ // @Query("update Account account set account.name =:isAccountName,account.address=:isAddress,"
+ //+ "accouns.email=:isEmail,account.cellphone=:isCellphone,account.point=:isPoint,"
+ //+ "account.username=:isUsername,account.password=:isPassword,"
+ //+ "account.checkadmin=:isCheckadmin"
+ //+ " where accout.accountid =:isAccountID")
+ //public  void updateAccount(@Param("isAccountid") int isAccountID,  @Param("isAccountName") String isAccountName ,
+ //@Param("isAddress") String isAddress, @Param("isEmail")String isEmail,
+ //@Param("isCellPhone")String isCellphone,@Param("isPoint") int isPoint,
+ //@Param("isUsername")String isUsername,@Param("isPassword")String isPassword,
+ //@Param("isCheackadmin")byte Checkadmin);
 }
