@@ -49,11 +49,13 @@ public class AccountController {
 		return "redirect:/customer";
 	}
 	//FUNCTION EDIT
-	//@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
-	//public void update(@Valid Account account) throws IOException{
-		//accountRepository.updateAccount(account.getAccountid(), account.getName(), account.getAddress(),
-				//account.getEmail(), account.getCellphone(), account.getPoint(), 
-				//account.getUsername(), account.getPassword(), account.getCheckadmin());
+	@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
+	public String update(@Valid Account account) throws IOException{
+		accountRepository.updateAccount(account.getAccountid(), account.getName(), account.getAddress(),
+				account.getEmail(), account.getCellphone(), account.getPoint(), 
+				account.getUsername(), account.getPassword(), account.getCheckadmin());
+		
+		return "redirect:/customer";
 	}
 
-
+}

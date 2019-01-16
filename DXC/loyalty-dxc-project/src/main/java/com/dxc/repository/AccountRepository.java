@@ -14,18 +14,16 @@ import com.dxc.entity.Account;
 
 @RepositoryRestResource
 public interface AccountRepository extends CrudRepository<Account, Long> {
- List<Account> findAll();
- Account findByAccountid(int id);
- //@Modifying(clearAutomatically = true)
- //@Transactional
- // @Query("update Account account set account.name =:isAccountName,account.address=:isAddress,"
- //+ "accouns.email=:isEmail,account.cellphone=:isCellphone,account.point=:isPoint,"
- //+ "account.username=:isUsername,account.password=:isPassword,"
- //+ "account.checkadmin=:isCheckadmin"
- //+ " where accout.accountid =:isAccountID")
- //public  void updateAccount(@Param("isAccountid") int isAccountID,  @Param("isAccountName") String isAccountName ,
- //@Param("isAddress") String isAddress, @Param("isEmail")String isEmail,
- //@Param("isCellPhone")String isCellphone,@Param("isPoint") int isPoint,
- //@Param("isUsername")String isUsername,@Param("isPassword")String isPassword,
- //@Param("isCheackadmin")byte Checkadmin);
+	List<Account> findAll();
+
+	Account findByAccountid(int id);
+
+	@Modifying(clearAutomatically = true)
+	@Transactional
+	@Query("update Account account set account.name =:isAccountName,account.address=:isAddress,account.email=:isEmail,account.cellphone=:isCellphone,account.point=:isPoint,account.username=:isUsername,account.password=:isPassword,account.checkadmin=:isCheckadmin where account.accountid =:isAccountID")
+	public void updateAccount(@Param("isAccountID") int isAccountID, @Param("isAccountName") String isAccountName,
+			@Param("isAddress") String isAddress, @Param("isEmail") String isEmail,
+			@Param("isCellphone") String isCellphone, @Param("isPoint") int isPoint,
+			@Param("isUsername") String isUsername, @Param("isPassword") String isPassword,
+			@Param("isCheckadmin") byte isCheckadmin);
 }

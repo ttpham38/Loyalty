@@ -104,8 +104,9 @@
 					class="fas fa-user"></i> <span>Customer Manager</span></a></li>
 			<li class="nav-item"><a class="nav-link" href="\order"> <i
 					class="fas fa-fw fa-table"></i> <span>Order Manager</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="\promotion"> <i
-					class="fas fa-percentage"></i> <span>Promotion Manager</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="\promotion">
+					<i class="fas fa-percentage"></i> <span>Promotion Manager</span>
+			</a></li>
 			<li class="nav-item"><a class="nav-link" href="#"> <i
 					class="fas fa-unlock"></i> <span>Role Manager</span></a></li>
 		</ul>
@@ -232,22 +233,23 @@
 											<td>${accounts.address}</td>
 											<td>${accounts.cellphone}</td>
 											<td>${accounts.email}</td>
-											
-													<td>${accounts.username}</td>
-													<td>${accounts.password}</td>
-													<td>${accounts.checkadmin}</td>
-													<td>${accounts.point}</td>
-													<td><a href="#editCustomerModal" class="edit"
-														data-accounts-id="${accounts.accountid}
-														data-customer-name-todo="${accounts.name}"
-														data-address-todo="${accounts.address}"
-														data-cellphone-todo="${accounts.cellphone}"
-														data-email-todo="${accounts.email}" data-toggle="modal"><i
-															class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a><a
-														href="/customer/delete/${accounts.accountid}"
-														class="delete"><i class="material-icons"
-															data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
-												
+
+											<td>${accounts.username}</td>
+											<td>${accounts.password}</td>
+											<td>${accounts.checkadmin}</td>
+											<td>${accounts.point}</td>
+											<td><a href="#editCustomerModal" class="edit"
+												data-accounts-id="${accounts.accountid}"
+												data-customer-name-todo="${accounts.name}"
+												data-address-todo="${accounts.address}"
+												data-cellphone-todo="${accounts.cellphone}"
+												data-username-todo="${accounts.username}"
+												data-password-todo="${accounts.password}"
+												data-email-todo="${accounts.email}" data-toggle="modal"><i
+													class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a><a
+												href="/customer/delete/${accounts.accountid}" class="delete"><i
+													class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
+
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -267,7 +269,8 @@
 								</div>
 								<div class="modal-body">
 									<div class="form-group">
-										<label>ID</label> <input type="text" class="form-control>
+										<label>ID</label> <input type="text"
+											class="form-control>
 									</div>
 									<div class="form-group">
 										<label>User Name</label> <input type="text"
@@ -358,8 +361,7 @@
 								<div id="editCustomerModal" class="modal fade">
 										<div class="modal-dialog">
 											<div class="modal-content">
-												<form action="/customer/update" method="post" 
-												enctype="multipart/form-data"></form>>
+												<form action="/customer/update" method="POST">
 													<div class="modal-header">
 														<h4 class="modal-title">Edit Customer</h4>
 														<button type="button" class="close" data-dismiss="modal"
@@ -373,7 +375,7 @@
 														</div>
 														<div class="form-group">
 															<label>Name</label> <input type="text"
-																name="fullname" class="form-control" required>
+																name="name" class="form-control" required>
 														</div>
 														<div class="form-group">
 															<label>Address</label> <input type="text" class="form-control"
@@ -388,12 +390,19 @@
 															<label>CellPhone</label> <input type="text"
 																name="cellphone" class="form-control" required>
 														</div>
-													
-														<div class="modal-footer">
-															<input type="button" class="btn btn-default"
-																data-dismiss="modal" value="Cancel"> <input
-																type="submit" class="btn btn-info" value="Save">
+													<div class="form-group">
+															<label>Username</label> <input type="text"
+																name="username" class="form-control" required>
 														</div>
+														<div class="form-group">
+															<label>Password</label> <input type="text"
+																name="password" class="form-control" required>
+														</div>
+													<div class="modal-footer">
+												<input type="button" class="btn btn-default"
+												data-dismiss="modal" value="Cancel"> <input
+												type="submit" class="btn btn-success" value="save">
+									</div> 
 												</form>
 											</div>
 										</div>
@@ -460,70 +469,119 @@
 						<span aria-hidden="true">Ã</span>
 					</button>
 				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
-			</div>
-		</div>
-	</div>
+				<div class="modal-body">Select "
+											Logout" below if you are ready to end your current session.
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-secondary" type="button"
+											data-dismiss="modal">Cancel</button>
+										<a class="btn btn-primary" href="login.html">Logout</a>
+									</div>
+								</div>
+						</div>
+					</div>
 
-	<!-- Bootstrap core JavaScript-->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+					<!-- Bootstrap core JavaScript-->
+					<script
+						src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Core plugin JavaScript-->
-	<script src="vendor/datatables/jquery.dataTables.js"></script>
-	<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+					<!-- Core plugin JavaScript-->
+					<script src="vendor/datatables/jquery.dataTables.js"></script>
+					<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
+					<!-- Custom scripts for all pages-->
+					<script src="js/myshop-admin.js"></script>
+					<script src="js/product-manage.js"></script>
 
-
-	<!-- Custom scripts for all pages-->
-	<script src="js/myshop-admin.js"></script>
-	<script src="js/product-manage.js"></script>
-
-	<!--  -->
-	<script>
-		$(document).ready(
-				function() {
-					$('#dataTable').DataTable();
-					$('#editCustomerModal').on(
-							'show.bs.modal',
-							function(e) {
-								var cusid = $(e.relatedTarget).data(
-										'customer-id');
-								var cusName = $(e.relatedTarget).data(
-										'customer-name-todo');
-								var address = $(e.relatedTarget).data(
-										'address-todo');
-								var email = $(e.relatedTarget).data(
-										'email-todo');
-								var cellphone = $(e.relatedTarget).data(
-										'cellphone-todo');
-								$(e.currentTarget).find(
-										'input[name="customerid"]').val(cusid);
-								$(e.currentTarget).find(
-										'input[name="name"]').val(cusName);
-								$(e.currentTarget)
-										.find('input[name="address"]').val(
-												address);
-								$(e.currentTarget).find(
-										'input[name="cellphone"]').val(
-										cellphone);
-								$(e.currentTarget).find('input[name="email"]')
-										.val(email);
-							});
-				});
-		document.getElementById('accountid').readOnly = true;
-	</script>
-
+					<!--  -->
+					<script>
+						$(document)
+								.ready(
+										function() {
+											$('#dataTable').DataTable();
+											$('#editCustomerModal')
+													.on(
+															'show.bs.modal',
+															function(e) {
+																var cusid = $(
+																		e.relatedTarget)
+																		.data(
+																				'accounts-id');
+																var cusName = $(
+																		e.relatedTarget)
+																		.data(
+																				'customer-name-todo');
+																var address = $(
+																		e.relatedTarget)
+																		.data(
+																				'address-todo');
+																var email = $(
+																		e.relatedTarget)
+																		.data(
+																				'email-todo');
+																var cellphone = $(
+																		e.relatedTarget)
+																		.data(
+																				'cellphone-todo');
+																var username = $(
+																		e.relatedTarget)
+																		.data(
+																				'username-todo');
+																var password = $(
+																		e.relatedTarget)
+																		.data(
+																				'password-todo');
+																
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="accountid"]')
+																		.val(
+																				cusid);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="name"]')
+																		.val(
+																				cusName);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="address"]')
+																		.val(
+																				address);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="cellphone"]')
+																		.val(
+																				cellphone);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="email"]')
+																		.val(
+																				email);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="username"]')
+																		.val(
+																				username);
+																$(
+																		e.currentTarget)
+																		.find(
+																				'input[name="password"]')
+																		.val(
+																				password);
+															});
+										});
+						document.getElementById('accountid').readOnly = true;
+					</script>
 </body>
 
 </html>
