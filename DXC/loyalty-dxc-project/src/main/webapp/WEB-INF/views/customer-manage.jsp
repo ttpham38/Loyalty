@@ -231,8 +231,8 @@
 											<td>${accounts.accountid}</td>
 											<td>${accounts.name}</td>
 											<td>${accounts.address}</td>
-											<td>${accounts.cellphone}</td>
 											<td>${accounts.email}</td>
+											<td>${accounts.cellphone}</td>
 
 											<td>${accounts.username}</td>
 											<td>${accounts.password}</td>
