@@ -19,14 +19,14 @@ import com.dxc.repository.AccountRepository;
 
 @Controller
 @SessionAttributes("account")
-public class LoginController {
+public class RegisterController {
 	@Autowired
 	private AccountRepository accountRepository;
 	Account account = new Account();
 
 	@RequestMapping(value = "/createaccount", method = RequestMethod.GET)
 	public String showPageLogin() {
-		return "login-guest";
+		return "home-register-guest";
 	}
 	@RequestMapping(value = "/createaccount/save", method = RequestMethod.POST)
 	public String save(@Valid Account account) throws Exception{
